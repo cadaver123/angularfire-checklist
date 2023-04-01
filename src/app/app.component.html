@@ -1,0 +1,19 @@
+<nav>
+  <div class="nav-wrapper">
+    <div class="brand-logo center">Checklist Panel</div>
+    <ul class="right">
+      <li *ngIf="(this.currentUserStatus$ | async) === UserStatus.LOGGED_IN; else notLoggedIn">
+        <a class="App-LogoutButton" (click)="logout()">Log out</a>
+      </li>
+      <ng-template #notLoggedIn>
+        <li *ngIf="!router.isActive('/signup', false) else signIn">
+          <a class="App-SignUpButton" [routerLink]="['/signup']">Sign up</a>
+        </li>
+        <ng-template #signIn>
+          <li><a class="App-SignInButton" [routerLink]="['/login']">Sign in</a></li>
+        </ng-template>
+      </ng-template>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

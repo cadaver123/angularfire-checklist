@@ -1,0 +1,25 @@
+<div class="AppChecklistTask-row row valign-wrapper">
+  <div (click)="toggle()" class="col s2">
+    <div class="AppChecklistTask-checkbox">
+      <i *ngIf="appChecklistTaskChecked; else unchecked"
+         class="AppChecklistTask-checkboxIcon material-icons small checkbox-icon"
+         @animationChecked>check_box</i>
+      <ng-template #unchecked>
+        <i @animationChecked
+           class="AppChecklistTask-checkboxIcon material-icons small checkbox-icon">check_box_outline_blank</i>
+      </ng-template>
+    </div>
+  </div>
+  <div class="col s10">
+    <label>
+      <textarea
+          class="AppChecklistTask-text materialize-textarea"
+          #textarea
+          [disabled]="appChecklistTaskChecked"
+          [value]="appChecklistTaskMessage??''"
+          (keyup)="onMessageChanged($event.target.value)"
+          maxlength="500">
+      </textarea>
+    </label>
+  </div>
+</div>

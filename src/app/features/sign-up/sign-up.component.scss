@@ -1,0 +1,8 @@
+@import 'materialize-css/sass/components/color-variables';
+
+:host {
+  background-color: color("blue-grey", "lighten-5");
+  display: block;
+  height: calc(100vh - 64px);
+  padding-top: 10rem;
+}

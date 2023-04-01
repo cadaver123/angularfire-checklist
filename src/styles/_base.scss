@@ -1,0 +1,23 @@
+@import 'materialize-css/sass/components/color-variables';
+@import "./mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: color("grey", "lighten-2");
+  font-size: 14px;
+  font-weight: 400;
+}

@@ -1,0 +1,33 @@
+<div class="AppChecklist-container"
+     (appResizableOnEnded)="resizeEnded($event)"
+     [appResizable]="resizableHandle"
+     #container>
+  <app-checklist-header class="AppChecklist-header"
+                        [appChecklistHeaderCardName]="appChecklistData.name"
+                        (appChecklistHeaderOnNameChanged)="changeCardName($event)"
+                        (appChecklistHeaderOnDelete)="deleteChecklist()">
+  </app-checklist-header>
+  <div class="AppChecklist-tasks">
+    <app-checklist-task
+        *ngFor="let task of tasks"
+        [appChecklistTaskId]="task.id"
+        [appChecklistTaskChecked]="task.checked"
+        [appChecklistTaskMessage]="task.message"
+    ></app-checklist-task>
+  </div>
+  <div class="AppChecklist-addTaskButtonContainer center">
+    <div (click)="createTask()" class="AppChecklist-addTaskButton btn-large waves-effect waves-light"><i
+        class="material-icons">add</i>
+    </div>
+  </div>
+  <div #resizableHandle class="AppChecklist-resizeHandle">
+    <i class="AppChecklist-resizeHandleIcon material-icons ">chevron_right</i>
+  </div>
+  <div (click)="changeColor()" class="AppChecklist-colorHandle">
+    <i class="material-icons ">palette</i>
+  </div>
+  <div class="AppChecklist-dragHandle">
+    <ng-content class="AppChecklist-dragHandleIcon" select="[cdkDragHandle]"></ng-content>
+  </div>
+</div>
+

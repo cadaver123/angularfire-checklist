@@ -1,0 +1,22 @@
+@import 'materialize-css/sass/components/color-variables';
+
+:host {
+  background-color: color("blue-grey", "lighten-5");
+  display: block;
+  min-height: calc(100vh - 64px);
+  padding-top: 10rem;
+}
+
+.AppLogin {
+  &-googleOauthContainer {
+    font-weight: 600;
+    min-width: 208px;
+    white-space: nowrap;
+  }
+
+  &-oauthProviderLogo {
+    margin-right: 8px;
+    margin-top: 7px;
+    width: 20px;
+  }
+}

@@ -1,0 +1,122 @@
+@use "sass:map";
+@use "sass:color";
+@import "node_modules/materialize-css/sass/components/color-variables";
+@import "src/styles/palette";
+
+:host {
+  $host: '.AppChecklist';
+
+  &#{$host}.isDeleted {
+    opacity: 0.3;
+  }
+
+  @each $num, $color in $palette {
+    &#{$host}.isColor#{$num} {
+      background-color: $color;
+
+      @if $color != #fff {
+        #{$host}-addTaskButton {
+          background-color: secondaryColor($color);
+        }
+      }
+    }
+  }
+}
+
+.AppChecklist {
+  &-container {
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    min-width: 325px;
+    opacity: 1;
+    overflow-y: auto;
+    padding: 7px 1rem;
+    transition: opacity 0.3s, background-color 0.5s;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparentize(color("grey", "base"), 0.5);
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+  }
+
+  &-tasks {
+    display: flex;
+    flex: 1 0 10rem;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &-addTaskButtonContainer {
+    margin-bottom: 1rem;
+  }
+
+  &-addTaskButton {
+    width: 12rem;
+
+    &:active {
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &-resizeHandle {
+    bottom: 5px;
+    color: color("grey", "base");
+    cursor: nwse-resize;
+    display: inline-block;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    user-select: none;
+    width: 24px;
+
+    &:hover,
+    &:active {
+      color: color("grey", "darken-2");
+    }
+  }
+
+  &-resizeHandleIcon {
+    transform: rotate(45deg);
+  }
+
+  &-colorHandle {
+    bottom: 10px;
+    color: color("grey", "base");
+    cursor: pointer;
+    height: 24px;
+    position: absolute;
+    user-select: none;
+    width: 24px;
+
+    &:hover,
+    &:active {
+      color: color("grey", "darken-2");
+    }
+  }
+
+  &-dragHandle {
+    color: color("grey", "base");;
+    cursor: move;
+    height: 24px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    width: 24px;
+
+    &:hover,
+    &:active {
+      color: color("grey", "darken-2");
+    }
+  }
+
+  &-dragHandleIcon {
+    transform: rotate(45deg);
+  }
+}

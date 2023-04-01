@@ -1,0 +1,11 @@
+@use "sass:color";
+
+@function secondaryColor($color) {
+  //@return darken(color.mix(color.complement($color), $secondary-color), 10%);;
+  @return darken(saturate(adjust-hue($color, 30), 20%), 50%);
+}
+
+$primary-color: #2a9d8fff;
+$secondary-color: #1a5f7a;
+
+$palette: (0: #fff, 1: #c5dce6, 2: #b8ece6ff, 3: #f6e7c3ff, 4: #fbdac0ff, 5: #f5c5b9ff);

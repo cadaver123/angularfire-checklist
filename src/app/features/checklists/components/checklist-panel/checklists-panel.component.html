@@ -1,0 +1,16 @@
+<div (mousedown)="createChecklist($event)" class="AppChecklistPanel-container">
+  <app-checklist class="AppChecklistPanel-draggableContainer"
+                 *ngFor="let checklist of checklists; trackBy: trackByChecklistId "
+                 @animation
+                 [appChecklistData]="checklist"
+                 [cdkDragData]="checklist"
+                 [cdkDragFreeDragPosition]="{ x: checklist.x, y: checklist.y }"
+                 [cdkDragBoundary]="selfRef"
+                 cdkDrag
+                 (mousedown)="$event.stopPropagation()"
+                 (cdkDragEnded)="onDragEnded($event)">
+    <div class="AppChecklistPanel-dragHandle" cdkDragHandle>
+      <i class="material-icons">zoom_out_map</i>
+    </div>
+  </app-checklist>
+</div>

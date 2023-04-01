@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "todo-e5aa8": {
+      "hosting": {
+        "checklist-panel": [
+          "todo-e5aa8"
+        ]
+      }
+    }
+  }
+}

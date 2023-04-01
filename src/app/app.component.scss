@@ -1,0 +1,5 @@
+@import 'materialize-css/sass/components/color-variables';
+
+:host {
+  color: color("blue-grey", "darken-4");
+}

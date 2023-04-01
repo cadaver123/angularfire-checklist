@@ -1,0 +1,37 @@
+@import 'node_modules/materialize-css/sass/components/color-variables';
+
+:host {
+  $host: '.AppChecklistTask';
+
+  &#{$host}.isChecked {
+    #{$host}-checkboxIcon {
+      color: color("green", "accent-4");
+    }
+
+    #{$host}-text {
+      text-decoration: line-through;
+    }
+  }
+}
+
+.AppChecklistTask {
+  &-row {
+    margin-bottom: 0;
+  }
+
+  &-checkbox {
+    display: inline-block;
+    height: 2rem;
+    position: relative;
+    width: 2rem;
+  }
+
+  &-checkboxIcon {
+    position: absolute;
+    user-select: none;
+  }
+}
+
+
+
+
