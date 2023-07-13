@@ -31,7 +31,8 @@
     min-width: 325px;
     opacity: 1;
     overflow-y: auto;
-    padding: 7px 1rem;
+    padding: 1rem 1rem;
+    position: relative;
     transition: opacity 0.3s, background-color 0.5s;
 
     &::-webkit-scrollbar {
@@ -45,6 +46,37 @@
     }
   }
 
+  &-deleteButton {
+    display: inline-block;
+    position: absolute;
+    transition: color 0.3s;
+    user-select: none;
+
+    &:active,
+    &:hover {
+      color: color("grey", "lighten-2");
+      cursor: pointer;
+    }
+  }
+
+  &-dragHandle {
+    color: color("grey", "base");;
+    cursor: move;
+    height: 24px;
+    position: absolute;
+    right: 20px;
+    width: 24px;
+
+    &:hover,
+    &:active {
+      color: color("grey", "darken-2");
+    }
+  }
+
+  &-dragHandleIcon {
+    transform: rotate(45deg);
+  }
+
   &-tasks {
     display: flex;
     flex: 1 0 10rem;
@@ -53,7 +85,7 @@
   }
 
   &-addTaskButtonContainer {
-    margin-bottom: 1rem;
+    margin: 0.5rem 0 0 0;
   }
 
   &-addTaskButton {
@@ -99,24 +131,5 @@
     &:active {
       color: color("grey", "darken-2");
     }
-  }
-
-  &-dragHandle {
-    color: color("grey", "base");;
-    cursor: move;
-    height: 24px;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    width: 24px;
-
-    &:hover,
-    &:active {
-      color: color("grey", "darken-2");
-    }
-  }
-
-  &-dragHandleIcon {
-    transform: rotate(45deg);
   }
 }

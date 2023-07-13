@@ -8,7 +8,7 @@
       color: color("green", "accent-4");
     }
 
-    #{$host}-text {
+    #{$host}-textarea {
       text-decoration: line-through;
     }
   }
@@ -16,6 +16,7 @@
 
 .AppChecklistTask {
   &-row {
+    display: flex;
     margin-bottom: 0;
   }
 
@@ -27,8 +28,13 @@
   }
 
   &-checkboxIcon {
+    left: 0;
     position: absolute;
     user-select: none;
+  }
+
+  &-textareColumn {
+    flex: 1 1 auto;
   }
 }
 

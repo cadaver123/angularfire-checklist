@@ -1,10 +1,7 @@
 <div class="AppChecklistHeader-container">
-  <div (click)="deleteChecklist()" class="AppChecklistHeader-deleteButton">
-    <i class="material-icons small">close</i>
-  </div>
   <div class="AppChecklistHeader-nameInputContainer input-field">
     <input name="checklist-name" class="AppChecklistHeader-nameInput"
-           (keyup)="changeCardName($event.target.value)"
+           (input)="changeCardName($event.target.value)"
            [value]="appChecklistHeaderCardName"
            autocomplete="false"
            maxlength="21"

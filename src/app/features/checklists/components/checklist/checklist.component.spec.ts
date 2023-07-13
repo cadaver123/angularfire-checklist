@@ -53,6 +53,10 @@ describe('ChecklistComponent', () => {
     return fixture.debugElement.query(By.directive(ResizableDirectiveStub)).injector.get(ResizableDirectiveStub);
   }
 
+  function getCloseButton(): DebugElement {
+    return fixture.debugElement.query(By.css('.AppChecklist-deleteButton'));
+  }
+
   beforeEach(async () => {
     dependencies = {
       firestore: new FirestoreServiceStub()
@@ -245,7 +249,7 @@ describe('ChecklistComponent', () => {
 
     describe('when delete checklist button clicked', () => {
       beforeEach(() => {
-        (getHeader().componentInstance as ChecklistHeaderComponentStub).appChecklistHeaderOnDelete.emit();
+        (getCloseButton().nativeElement as HTMLElement).click();
 
         fixture.detectChanges();
       });

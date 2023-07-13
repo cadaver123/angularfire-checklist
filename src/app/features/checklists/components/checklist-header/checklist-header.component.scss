@@ -4,8 +4,7 @@
   &-container {
     align-items: center;
     display: flex;
-    margin: 1rem 0;
-    position: relative;
+    margin: 0 0 0.5rem 0;
   }
 
   &-nameInputContainer {
@@ -16,19 +15,5 @@
   &-nameInput {
     font-weight: bold;
     text-align: center;
-  }
-
-  &-deleteButton {
-    display: inline-block;
-    position: absolute;
-    top: -5px;
-    transition: color 0.3s;
-    user-select: none;
-
-    &:active,
-    &:hover {
-      color: color("grey", "lighten-2");
-      cursor: pointer;
-    }
   }
 }

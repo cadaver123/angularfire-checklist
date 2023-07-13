@@ -55,7 +55,7 @@ describe('SignUpComponent', () => {
       getPasswordInput().nativeElement.dispatchEvent(new Event('input'));
       getPasswordConfirmationInput().nativeElement.value = 'passwo';
       getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('input'));
-      getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('keyup'));
+      getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('input'));
 
       fixture.detectChanges();
     }));
@@ -83,7 +83,7 @@ describe('SignUpComponent', () => {
       getPasswordInput().nativeElement.dispatchEvent(new Event('input'));
       getPasswordConfirmationInput().nativeElement.value = 'passwo';
       getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('input'));
-      getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('keyup'));
+      getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('input'));
 
       fixture.detectChanges();
     }));
@@ -101,7 +101,7 @@ describe('SignUpComponent', () => {
       getPasswordInput().nativeElement.dispatchEvent(new Event('input'));
       getPasswordConfirmationInput().nativeElement.value = 'passw';
       getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('input'));
-      getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('keyup'));
+      getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('input'));
 
       fixture.detectChanges();
     }));
@@ -120,7 +120,7 @@ describe('SignUpComponent', () => {
       getPasswordInput().nativeElement.dispatchEvent(new Event('input'));
       getPasswordConfirmationInput().nativeElement.value = 'password1';
       getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('input'));
-      getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('keyup'));
+      getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('input'));
 
       fixture.detectChanges();
     }));
@@ -139,7 +139,7 @@ describe('SignUpComponent', () => {
         getPasswordConfirmationInput().nativeElement.setCustomValidity.calls.reset();
         getPasswordConfirmationInput().nativeElement.value = 'password';
         getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('input'));
-        getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('keyup'));
+        getPasswordConfirmationInput().nativeElement.dispatchEvent(new Event('input'));
 
         fixture.detectChanges();
       }));

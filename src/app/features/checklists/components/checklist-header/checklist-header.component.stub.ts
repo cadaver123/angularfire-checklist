@@ -9,8 +9,5 @@ export class ChecklistHeaderComponentStub {
   public appChecklistHeaderCardName: string;
 
   @Output()
-  public appChecklistHeaderOnDelete: EventEmitter<void> = new EventEmitter<void>();
-
-  @Output()
   public appChecklistHeaderOnNameChanged: EventEmitter<string> = new EventEmitter<string>();
 }

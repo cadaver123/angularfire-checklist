@@ -131,7 +131,7 @@ describe('ChecklistTaskComponent', () => {
 
   describe('when message has changed', () => {
     beforeEach(waitForAsync(() => {
-      getTextarea().triggerEventHandler('keyup', {
+      getTextarea().triggerEventHandler('input', {
         target: {
           value: 'new value'
         }
@@ -145,7 +145,7 @@ describe('ChecklistTaskComponent', () => {
     describe('when changing message fast', () => {
       beforeEach(fakeAsync(() => {
         dependencies.firestore.updateTaskMessage.calls.reset();
-        getTextarea().triggerEventHandler('keyup', {
+        getTextarea().triggerEventHandler('input', {
           target: {
             value: 'new'
           }
@@ -153,7 +153,7 @@ describe('ChecklistTaskComponent', () => {
 
         tick(10);
 
-        getTextarea().triggerEventHandler('keyup', {
+        getTextarea().triggerEventHandler('input', {
           target: {
             value: 'new value'
           }
@@ -161,7 +161,7 @@ describe('ChecklistTaskComponent', () => {
 
         tick(20);
 
-        getTextarea().triggerEventHandler('keyup', {
+        getTextarea().triggerEventHandler('input', {
           target: {
             value: 'new value new'
           }
@@ -178,7 +178,7 @@ describe('ChecklistTaskComponent', () => {
 
   describe('when user has delete the message', () => {
     beforeEach(waitForAsync(() => {
-      getTextarea().triggerEventHandler('keyup', {
+      getTextarea().triggerEventHandler('input', {
         target: {
           value: ''
         }

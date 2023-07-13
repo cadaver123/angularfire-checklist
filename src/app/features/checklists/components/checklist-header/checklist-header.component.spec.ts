@@ -18,14 +18,12 @@ describe('ChecklistHeaderComponent', () => {
     template: `
       <app-checklist-header
         [appChecklistHeaderCardName]="name"
-        (appChecklistHeaderOnDelete)="onDelete($event)"
         (appChecklistHeaderOnNameChanged)="onNameChanged($event)"
       ></app-checklist-header>
     `,
   })
   class TestHostComponent {
     public name: string;
-    public onDelete: jasmine.Spy = jasmine.createSpy('onDelete');
     public onNameChanged: jasmine.Spy = jasmine.createSpy('onNameChanged');
   }
 
@@ -49,20 +47,10 @@ describe('ChecklistHeaderComponent', () => {
     });
   });
 
-  describe('when the user clicked delete checklist button', () => {
-    beforeEach(() => {
-      (getCloseButton().nativeElement as HTMLElement).click();
-    });
-
-    it('should emit delete event', () => {
-      expect(fixture.componentInstance.onDelete).toHaveBeenCalled();
-    });
-  });
-
   describe('when the name of the checklist has changed', () => {
     beforeEach(() => {
       (getNameInput().nativeElement as HTMLInputElement).value = 'new name';
-      (getNameInput().nativeElement as HTMLInputElement).dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
+      (getNameInput().nativeElement as HTMLInputElement).dispatchEvent(new KeyboardEvent('input', { bubbles: true }));
     });
 
     it('should emit a new name', () => {

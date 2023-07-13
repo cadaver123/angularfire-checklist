@@ -12,16 +12,9 @@ export class ChecklistHeaderComponent {
   public appChecklistHeaderCardName: string;
 
   @Output()
-  public appChecklistHeaderOnDelete: EventEmitter<void> = new EventEmitter<void>();
-
-  @Output()
   public appChecklistHeaderOnNameChanged: EventEmitter<string> = new EventEmitter<string>();
 
   public changeCardName(changedName: string): void {
     this.appChecklistHeaderOnNameChanged.emit(changedName);
-  }
-
-  public deleteChecklist(): void {
-    this.appChecklistHeaderOnDelete.emit();
   }
 }
